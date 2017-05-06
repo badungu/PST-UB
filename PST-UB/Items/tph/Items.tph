@@ -49,15 +49,10 @@ STRING_SET 68425 ~GlobalGT("Regret","GLOBAL",0)~
 // to quick item slot
 COPY_EXISTING ~EYEVECNA.ITM~ ~override~
   WRITE_LONG 0x34 500
-  WRITE_LONG 0x18 0x0000007c
-  READ_LONG 0x64 "AbilityOffset"
-  READ_SHORT 0x68 "NumAbilities"
-  READ_LONG 0x6a "EffectsOffset"
-  PATCH_IF "NumAbilities" > 0 THEN
-  BEGIN
-    WRITE_LONG 0x68 "NumAbilities" - 1
-    WRITE_LONG 0x6a "EffectsOffset" - 0x38
-    DELETE_BYTES "AbilityOffset" 0x38
+  WRITE_BYTE 0x18 (THIS | BIT4)
+  //remove Item ability
+  LPF DELETE_ITEM_HEADER
+  INT_VAR header_type = ~-1~
   END
  BUT_ONLY_IF_IT_CHANGES
 
