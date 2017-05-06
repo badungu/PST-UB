@@ -10,6 +10,7 @@
 
 // These were moved from Fixpack for release 4.0
 
+ACTION_IF !GAME_IS ~pstee~ BEGIN
 COPY_EXISTING ~beast.ini~ ~beast.ini~
   REPLACE_TEXTUALLY
 ~desc0=3598~
@@ -67,6 +68,65 @@ global=Talk_To_Betrayer~
 desc1=64199
 global=Vhailor~
  BUT_ONLY_IF_IT_CHANGES
+END ELSE BEGIN
+COPY_EXISTING ~bgee.lua~ ~override~
+  REPLACE_TEXTUALLY
+~desc0=3598~
+~desc0=3598
+%TAB%%TAB%%TAB%desc1=64131
+%TAB%%TAB%%TAB%global=Annah~
+  REPLACE_TEXTUALLY
+~desc0=3586~
+~desc0=3586
+%TAB%%TAB%%TAB%desc1=64143
+%TAB%%TAB%%TAB%desc2=64143
+%TAB%%TAB%%TAB%global=Dakkon~
+  REPLACE_TEXTUALLY
+~desc0=3534~
+~desc0=3534
+%TAB%%TAB%%TAB%desc1=3528
+%TAB%%TAB%%TAB%global=Dhall~
+  REPLACE_TEXTUALLY
+~desc0=3533~
+~desc0=3533
+%TAB%%TAB%%TAB%desc1=3527
+%TAB%%TAB%%TAB%desc2=3527
+%TAB%%TAB%%TAB%global=Know_Dustmen~
+  REPLACE_TEXTUALLY
+~desc0=3583~
+~desc0=3583
+%TAB%%TAB%%TAB%desc1=3583
+%TAB%%TAB%%TAB%desc2=64144
+%TAB%%TAB%%TAB%global=Grace~
+  REPLACE_TEXTUALLY
+~desc0=3613~
+~desc0=3613
+%TAB%%TAB%%TAB%desc1=64196
+%TAB%%TAB%%TAB%desc2=64196
+%TAB%%TAB%%TAB%global=Ignus~
+  REPLACE_TEXTUALLY
+~desc0=3608~
+~desc0=3608
+%TAB%%TAB%%TAB%desc1=64197
+%TAB%%TAB%%TAB%global=Know_Ravel~
+  REPLACE_TEXTUALLY
+~desc0=3605~
+~desc0=3605
+%TAB%%TAB%%TAB%desc1=64198
+%TAB%%TAB%%TAB%desc2=64200
+%TAB%%TAB%%TAB%global=Nordom~
+  REPLACE_TEXTUALLY
+~desc0=3633~
+~desc0=3633
+%TAB%%TAB%%TAB%desc1=64207
+%TAB%%TAB%%TAB%global=Talk_To_Betrayer~
+  REPLACE_TEXTUALLY
+~desc0=3629~
+~desc0=3629
+%TAB%%TAB%%TAB%desc1=64199
+%TAB%%TAB%%TAB%global=Vhailor~
+ BUT_ONLY
+END
 
 
 // Alu-fiend entry, original portrait based on Aasimar portrait, reworked by Leila and Maebe.

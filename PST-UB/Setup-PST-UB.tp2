@@ -34,6 +34,9 @@ ACTION_IF GAME_IS ~pstee~ BEGIN
 	OUTER_SPRINT "HelpDead" "!Help([0.DEAD])"
 	OUTER_SPRINT "HelpHatmonium" "!Help([ANYONE]) !Faction(LastTrigger,HATMONIUM)"
 	OUTER_SPRINT "HelpDamsel" "!Help([0.0.0.0.DAMSEL_IN_DISTRESS])"
+	OUTER_SPRINT "BracketL" ""
+	OUTER_SPRINT "BracketR" ""
+	OUTER_SPRINT "DotComma" ","
 END ELSE BEGIN
 	OUTER_SPRINT "FadeToBlack" "FadeToBlack()"
 	OUTER_SPRINT "CommaNull" ""
@@ -50,6 +53,9 @@ END ELSE BEGIN
 	OUTER_SPRINT "HelpDead" "!Help([0.0.0.DEAD])"
 	OUTER_SPRINT "HelpHatmonium" "!Help([0.HATMONIUM])"
 	OUTER_SPRINT "HelpDamsel" "!Help([0.0.0.0.0.0.DAMSEL_IN_DISTRESS])"
+	OUTER_SPRINT "BracketL" "["
+	OUTER_SPRINT "BracketR" "]"
+	OUTER_SPRINT "DotComma" "."
 END
 
 END
