@@ -8,9 +8,9 @@
 
 
 BACKUP ~PST-UB/backup~
-AUTHOR ~pescalona@verizon.net~
-// MODDER
-VERSION ~v4.12~
+AUTHOR ~Plese report issues to: https://github.com/badungu/PST-UB/issues Original author: pescalona@verizon.net~
+MODDER
+VERSION ~v5.00_20170506a~
 
 NO_IF_EVAL_BUG
 
