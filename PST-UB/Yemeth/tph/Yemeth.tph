@@ -27,7 +27,7 @@ THEN
 END
 
 IF
-  Help([0.0.TEAM_4])
+  %HELP_TEAM4%
 THEN
   RESPONSE #100
     Enemy()
@@ -49,7 +49,7 @@ THEN
     Attack(LastAttackerOf(Myself))
 END
 >>>>>>>>
-COMPILE ~.../inlinedfile/0400ADY.BAF~
+COMPILE ~.../inlinedfile/0400ADY.BAF~ EVAL
 
 
 <<<<<<<< .../inlinedfile/0400RC.BAF
@@ -81,7 +81,7 @@ IF
 THEN
   RESPONSE #100
     DestroySelf()
-    CreateCreature("RKCHSR2",[3165.450]) // Rake-Chaser - Cursed Erinys
+    CreateCreature("RKCHSR2",[3165.450]%CommaNull%) // Rake-Chaser - Cursed Erinys
 END
 
 IF
@@ -109,7 +109,7 @@ THEN
     RunAwayFrom([PC],50)
 END
 >>>>>>>>
-COMPILE ~.../inlinedfile/0400RC.BAF~
+COMPILE ~.../inlinedfile/0400RC.BAF~ EVAL
 
 
 <<<<<<<< .../inlinedfile/0400RC2.BAF
@@ -134,7 +134,7 @@ IF
 THEN
   RESPONSE #100
     DestroySelf()
-    CreateCreature("RKCHSR",[3165.490]) // Rake-Chaser - Collector
+    CreateCreature("RKCHSR",[3165.490]%CommaNull%) // Rake-Chaser - Collector
 END
 
 IF
@@ -154,7 +154,7 @@ THEN
     RunAwayFrom([PC],50)
 END
 >>>>>>>>
-COMPILE ~.../inlinedfile/0400RC2.BAF~
+COMPILE ~.../inlinedfile/0400RC2.BAF~ EVAL
 
 
 // ADYZOEL.CRE
@@ -190,7 +190,7 @@ IF
   GlobalLT("RKCHSR2_DEAD","KAPUTZ",1)
 THEN
   RESPONSE #100
-    CreateCreature("RKCHSR",[3165.490]) // Rake-Chaser - Collector
+    CreateCreature("RKCHSR",[3165.490]%CommaNull%) // Rake-Chaser - Collector
 END
 
 IF
@@ -201,7 +201,7 @@ IF
   GlobalLT("RKCHSR2_DEAD","KAPUTZ",1)
 THEN
   RESPONSE #100
-    CreateCreature("ADYZOEL",[3135.590]) // Adyzoel Eriane-Ard - Rake
+    CreateCreature("ADYZOEL",[3135.590]%CommaNull%) // Adyzoel Eriane-Ard - Rake
 END
 
 IF
@@ -213,10 +213,10 @@ IF
   GlobalLT("RKCHSR2_DEAD","KAPUTZ",1)
 THEN
   RESPONSE #10
-    CreateCreature("RKCHSR2",[3165.450]) // Rake-Chaser - Cursed Erinyes
+    CreateCreature("RKCHSR2",[3165.450]%CommaNull%) // Rake-Chaser - Cursed Erinyes
 END
 >>>>>>>>
-EXTEND_TOP ~AR0400.BCS~ ~.../inlinedfile/rakes.baf~
+EXTEND_TOP ~AR0400.BCS~ ~.../inlinedfile/rakes.baf~ EVAL
 
 
 // Export 0101RATB.BCS

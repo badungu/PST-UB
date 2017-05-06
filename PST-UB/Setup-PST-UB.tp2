@@ -26,6 +26,7 @@ ACTION_IF GAME_IS ~pstee~ BEGIN
 	OUTER_SPRINT "FadeFromBlack" "FadeFromColor([0.0],0)"
 	OUTER_SPRINT "CreatePartyGold" "GivePartyGold"
 	OUTER_SPRINT "AddPartyExperience" "AddexperienceParty"
+	OUTER_SPRINT "HELP_TEAM4" "Help([ANYONE]) Team(LastTrigger,TEAM_4)"
 END ELSE BEGIN
 	OUTER_SPRINT "FadeToBlack" "FadeToBlack()"
 	OUTER_SPRINT "CommaNull" ""
@@ -34,6 +35,7 @@ END ELSE BEGIN
 	OUTER_SPRINT "FadeFromBlack" "FadeFromBlack()"
 	OUTER_SPRINT "CreatePartyGold" "CreatePartyGold"
 	OUTER_SPRINT "AddPartyExperience" "AddPartyExperience"
+	OUTER_SPRINT "HELP_TEAM4" "Help([0.0.TEAM_4])"
 END
 
 END
@@ -187,7 +189,7 @@ INCLUDE ~PST-UB/Deionarra/tph/Deionarra.tph~
 
 BEGIN @6 // ~Restored Pendant of Yemeth Quest~
 DESIGNATED 5
-REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
+REQUIRE_PREDICATE GAME_IS ~pst pstee~ ~This component is only available for Planescape Torment/Planescape Torment:Enhanced Edition~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!YEMETH.xxx~
 INCLUDE ~PST-UB/Yemeth/tph/Yemeth.tph~
