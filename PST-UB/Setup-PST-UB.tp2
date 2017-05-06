@@ -32,7 +32,7 @@ ACTION_IF GAME_IS ~pstee~ BEGIN
 	OUTER_SPRINT "HELP_TEAM4" "Help([ANYONE]) Team(LastTrigger,TEAM_4)"
 	OUTER_SPRINT "HelpBad" "!Help([0.BAD])"
 	OUTER_SPRINT "HelpDead" "!Help([0.DEAD])"
-	OUTER_SPRINT "HelpHatmonium" "!Faction(LastTrigger,HATMONIUM)"
+	OUTER_SPRINT "HelpHatmonium" "Help([ANYONE]) !Faction(LastTrigger,HATMONIUM)"
 	OUTER_SPRINT "HelpDamsel" "!Help([0.0.0.0.DAMSEL_IN_DISTRESS])"
 END ELSE BEGIN
 	OUTER_SPRINT "FadeToBlack" "FadeToBlack()"
