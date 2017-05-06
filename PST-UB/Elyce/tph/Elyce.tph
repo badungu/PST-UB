@@ -202,7 +202,7 @@ THEN
 END
 
 IF
-  Help([0.0.TEAM_2])
+  %HELP_TEAM2%
 THEN
   RESPONSE #100
     Enemy()
@@ -212,7 +212,7 @@ END
 
 COPY_EXISTING ~0400ELY.BCS~ ~override~
  DECOMPILE_BCS_TO_BAF
-  INSERT_FILE 0x0 ~.../inlinedfile/addelyce.baf~
+  INSERT_FILE 0x0 ~.../inlinedfile/addelyce.baf~ EVAL
   REPLACE_TEXTUALLY
 ~IF
   Global("Elyce","AR0400",0)
@@ -242,7 +242,7 @@ THEN
 END
 
 IF
-  Help([0.0.TEAM_1])
+  %HELP_TEAM1%
 THEN
   RESPONSE #100
     Enemy()
@@ -250,7 +250,7 @@ THEN
 END
 
 IF
-  Help([0.0.TEAM_2])
+  %HELP_TEAM2%
 THEN
   RESPONSE #100
     EscapeArea()
@@ -260,7 +260,7 @@ END
 COPY_EXISTING ~0400MAE.BCS~ ~override~
               ~0400TAR.BCS~ ~override~
  DECOMPILE_BCS_TO_BAF
-  INSERT_FILE 0x0 ~.../inlinedfile/addmaethtarin.baf~
+  INSERT_FILE 0x0 ~.../inlinedfile/addmaethtarin.baf~ EVAL
   REPLACE_TEXTUALLY
 ~GlobalGT("Elyce","AR0400",2)~
 ~GlobalGT("Elyce","AR0400",3)~

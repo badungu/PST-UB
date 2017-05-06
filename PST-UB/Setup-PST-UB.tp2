@@ -26,6 +26,9 @@ ACTION_IF GAME_IS ~pstee~ BEGIN
 	OUTER_SPRINT "FadeFromBlack" "FadeFromColor([0.0],0)"
 	OUTER_SPRINT "CreatePartyGold" "GivePartyGold"
 	OUTER_SPRINT "AddPartyExperience" "AddexperienceParty"
+	OUTER_SPRINT "HELP_TEAM1" "Help([ANYONE]) Team(LastTrigger,TEAM_1)"
+	OUTER_SPRINT "HELP_TEAM2" "Help([ANYONE]) Team(LastTrigger,TEAM_2)"
+	OUTER_SPRINT "HELP_TEAM3" "Help([ANYONE]) Team(LastTrigger,TEAM_3)"
 	OUTER_SPRINT "HELP_TEAM4" "Help([ANYONE]) Team(LastTrigger,TEAM_4)"
 END ELSE BEGIN
 	OUTER_SPRINT "FadeToBlack" "FadeToBlack()"
@@ -35,6 +38,9 @@ END ELSE BEGIN
 	OUTER_SPRINT "FadeFromBlack" "FadeFromBlack()"
 	OUTER_SPRINT "CreatePartyGold" "CreatePartyGold"
 	OUTER_SPRINT "AddPartyExperience" "AddPartyExperience"
+	OUTER_SPRINT "HELP_TEAM1" "Help([0.0.TEAM_1])"
+	OUTER_SPRINT "HELP_TEAM2" "Help([0.0.TEAM_2])"
+	OUTER_SPRINT "HELP_TEAM3" "Help([0.0.TEAM_3])"
 	OUTER_SPRINT "HELP_TEAM4" "Help([0.0.TEAM_4])"
 END
 
@@ -196,7 +202,7 @@ INCLUDE ~PST-UB/Yemeth/tph/Yemeth.tph~
 
 BEGIN @7 // ~Restored Elyce's Company~
 DESIGNATED 6
-REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
+REQUIRE_PREDICATE GAME_IS ~pst pstee~ ~This component is only available for Planescape Torment/Planescape Torment:Enhanced Edition~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!ELYCE.xxx~
 INCLUDE ~PST-UB/Elyce/tph/Elyce.tph~
