@@ -125,106 +125,124 @@ DESIGNATED 0
 
 BEGIN @21 // Expanded Deionarra's Truth Mod
 DESIGNATED 50
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!XPDEIO.xxx~
 INCLUDE ~PST-UB/XPDeionarra/tph/XPDeionarra.tph~
 
 BEGIN @15 // ~Restored Cheat Items (Not Recommended)~
 DESIGNATED 51
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!CITEMS.xxx~
 INCLUDE ~PST-UB/CheatItems/tph/CheatItems.tph~
 
 BEGIN @2 // ~Restored Able Ponder-Thought Research~
 DESIGNATED 1
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!ABLE.xxx~
 INCLUDE ~PST-UB/Able/tph/Able.tph~
 
 BEGIN @3 // ~Restored More Morte Mortuary Moments~
 DESIGNATED 2
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!MMMM.xxx~
 INCLUDE ~PST-UB/MorteIntro/tph/MorteIntro.tph~
 
 BEGIN @4 // ~Restored Candlestick Quest~
 DESIGNATED 3
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!CANDLE.xxx~
 INCLUDE ~PST-UB/Candlestick/tph/Candlestick.tph~
 
 BEGIN @5 // ~Restored Deionarra's Truth Conversations~
 DESIGNATED 4
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!DTRUTH.xxx~
 INCLUDE ~PST-UB/Deionarra/tph/Deionarra.tph~
 
 BEGIN @6 // ~Restored Pendant of Yemeth Quest~
 DESIGNATED 5
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!YEMETH.xxx~
 INCLUDE ~PST-UB/Yemeth/tph/Yemeth.tph~
 
 BEGIN @7 // ~Restored Elyce's Company~
 DESIGNATED 6
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!ELYCE.xxx~
 INCLUDE ~PST-UB/Elyce/tph/Elyce.tph~
 
 BEGIN @8 // ~Restored Curst Citizens~
 DESIGNATED 7
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!CRSTMN.xxx~
 INCLUDE ~PST-UB/CurstCitizens/tph/CurstCitizens.tph~
 
 BEGIN @9 // ~Restored Curst Prisoners~
 DESIGNATED 8
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!CRSTPR.xxx~
 INCLUDE ~PST-UB/CurstPrisoners/tph/CurstPrisoners.tph~
 
 BEGIN @10 // ~Restored Carl Parfidor~
 DESIGNATED 9
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!CARLP.xxx~
 INCLUDE ~PST-UB/Parfidor/tph/Parfidor.tph~
 
 BEGIN @11 // ~Restored Morte-Ingress's Teeth Banter~
 DESIGNATED 10
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!MTEETH.xxx~
 INCLUDE ~PST-UB/MorteTeeth/tph/MorteTeeth.tph~
 
 BEGIN @12 // ~Restored Alley of Dangerous Angles Thugs~
 DESIGNATED 11
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!THUGS.xxx~
 INCLUDE ~PST-UB/AlleyThug/tph/AlleyThug.tph~
 
 BEGIN @13 // ~Restored Items~
 DESIGNATED 12
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!ITEMS.xxx~
 INCLUDE ~PST-UB/Items/tph/Items.tph~
 
 BEGIN @14 // ~Restored Party Comments and Banters~
 DESIGNATED 13
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!SOUNDS.xxx~
 INCLUDE ~PST-UB/Sounds/tph/Sounds.tph~
 
 BEGIN @20 // ~Restored Mebbeth~
 DESIGNATED 14
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!MEBBTH.xxx~
 INCLUDE ~PST-UB/Mebbeth/tph/Mebbeth.tph~
 
 BEGIN @22 // ~Restored Lower Ward~
 DESIGNATED 15
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!LOWERW.xxx~
 INCLUDE ~PST-UB/LowerWard/tph/LowerWard.tph~
 
 BEGIN @25 // ~Restored Bestiary Entries~
 DESIGNATED 16
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!BESTIA.xxx~
 INCLUDE ~PST-UB/Bestiary/tph/Bestiary.tph~
