@@ -126,6 +126,7 @@
 
 // =========================== BEGIN ELYCE'S COMPANY QUEST =====================
 
+INCLUDE ~PST-UB/utils/Q_AREMacros.tph~
 
 COMPILE ~PST-UB/Elyce/dlg/Elyce.d~
 
