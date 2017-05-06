@@ -3,7 +3,7 @@
 
 
 INCLUDE ~PST-UB/utils/Q_AREMacros.tph~
-INCLUDE ~PST-UB/utils/Q_VARMacros.tph~
+
 COMPILE ~PST-UB/LowerWard/dlg/LowerWard.d~
 
 // Add Hailcin'n and the 6 Deran customers
@@ -160,7 +160,7 @@ THEN
 END
 
 IF
-  Help([0.0.TEAM_2])
+  %HELP_TEAM2%
 THEN
   RESPONSE #100
     Enemy()
@@ -183,7 +183,7 @@ THEN
     ReturnToSavedPlace()
 END
 >>>>>>>>
-COMPILE ~.../inlinedfile/0500DCUS.BAF~ ~override~
+COMPILE ~.../inlinedfile/0500DCUS.BAF~ ~override~ EVAL
 
 
 // Add the 2 workers near Lenny
@@ -212,7 +212,7 @@ THEN
 END
 
 IF
-  Help([0.0.TEAM_3])
+  %HELP_TEAM3%
 THEN
   RESPONSE #100
     Enemy()
@@ -235,7 +235,7 @@ THEN
     ReturnToSavedPlace()
 END
 >>>>>>>>
-COMPILE ~.../inlinedfile/0500WRKG.BAF~ ~override~
+COMPILE ~.../inlinedfile/0500WRKG.BAF~ ~override~ EVAL
 
 <<<<<<<< .../inlinedfile/0500WRK2.BAF
 IF
@@ -282,12 +282,23 @@ END
 >>>>>>>>
 COMPILE ~.../inlinedfile/0500WRK2.BAF~ ~override~
 
+ACTION_IF !GAME_IS ~pstee~ BEGIN
 COPY_EXISTING ~0500WRKR.BCS~ ~override~
   DECOMPILE_BCS_TO_BAF
    REPLACE_TEXTUALLY ~Face(10)~ ~Face(14)~
   COMPILE_BAF_TO_BCS
  BUT_ONLY_IF_IT_CHANGES
+END ELSE BEGIN
+COPY_EXISTING ~0500WRKR.BCS~ ~override~
+DECOMPILE_AND_PATCH BEGIN
+	REPLACE_TEXTUALLY ~Face(NE)~ ~Face(SE)~
+END
+BUT_ONLY
+END
  
+ACTION_IF !GAME_IS ~pstee~ BEGIN
+
+INCLUDE ~PST-UB/utils/Q_VARMacros.tph~
 
 // Return Kii'na after eight days game time
 // First, create her timer variable
@@ -300,10 +311,15 @@ COPY_EXISTING ~VAR.VAR~ ~VAR.TMP~
   LAUNCH_PATCH_MACRO Q_VarVar_AddNewRecord
  BUT_ONLY_IF_IT_CHANGES
 COPY ~VAR.TMP~ ~VAR.VAR~
+END
 
 // Second, give her CRE a script name and default script
 COPY_EXISTING ~KIINA.CRE~ ~override~
+PATCH_IF !GAME_IS ~pstee~ BEGIN
   WRITE_ASCII 0x324 ~Kiina~ (18)
+END ELSE BEGIN
+  WRITE_ASCII 0x280 ~Kiina~ (18)
+END
   WRITE_ASCII 0x268 ~0500KINA~ (8)
  BUT_ONLY_IF_IT_CHANGES
 
@@ -316,7 +332,7 @@ IF
   GlobalTimerExpired("Kiina_Return","GLOBAL")
 THEN
   RESPONSE #100
-    CreateCreature("Kiina",[801.2495])
+    CreateCreature("Kiina",[801.2495]%CommaNull%)
 END
 >>>>>>>>
-EXTEND_BOTTOM ~AR0500.BCS~ ~.../inlinedfile/KiinaReturn.baf~
+EXTEND_BOTTOM ~AR0500.BCS~ ~.../inlinedfile/KiinaReturn.baf~ EVAL

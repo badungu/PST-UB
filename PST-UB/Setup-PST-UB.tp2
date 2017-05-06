@@ -231,7 +231,7 @@ INCLUDE ~PST-UB/CurstPrisoners/tph/CurstPrisoners.tph~
 
 BEGIN @10 // ~Restored Carl Parfidor~
 DESIGNATED 9
-REQUIRE_PREDICATE GAME_IS ~pst pstee~ ~This component is only available for Planescape Torment/Planescape Torment:Enhanced Edition~
+REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!CARLP.xxx~
 INCLUDE ~PST-UB/Parfidor/tph/Parfidor.tph~
@@ -273,7 +273,7 @@ INCLUDE ~PST-UB/Mebbeth/tph/Mebbeth.tph~
 
 BEGIN @22 // ~Restored Lower Ward~
 DESIGNATED 15
-REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
+REQUIRE_PREDICATE GAME_IS ~pst pstee~ ~This component is only available for Planescape Torment/Planescape Torment:Enhanced Edition~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!LOWERW.xxx~
 INCLUDE ~PST-UB/LowerWard/tph/LowerWard.tph~
