@@ -238,7 +238,7 @@ INCLUDE ~PST-UB/Parfidor/tph/Parfidor.tph~
 
 BEGIN @11 // ~Restored Morte-Ingress's Teeth Banter~
 DESIGNATED 10
-REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
+REQUIRE_PREDICATE GAME_IS ~pst pstee~ ~This component is only available for Planescape Torment/Planescape Torment:Enhanced Edition~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!MTEETH.xxx~
 INCLUDE ~PST-UB/MorteTeeth/tph/MorteTeeth.tph~
