@@ -209,7 +209,7 @@ INCLUDE ~PST-UB/Elyce/tph/Elyce.tph~
 
 BEGIN @8 // ~Restored Curst Citizens~
 DESIGNATED 7
-REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
+REQUIRE_PREDICATE GAME_IS ~pst pstee~ ~This component is only available for Planescape Torment/Planescape Torment:Enhanced Edition~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!CRSTMN.xxx~
 INCLUDE ~PST-UB/CurstCitizens/tph/CurstCitizens.tph~
