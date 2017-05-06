@@ -93,9 +93,13 @@ STRING_SET 1117 @1117
 
 "Don't lose the journal or we'll be up the Styx again. And whatever you do, DO NOT tell anyone WHO you are or WHAT happens to you, or they'll put you on a quick pilgrimage to the crematorium. Do what I tell you: READ the journal, then FIND Pharod."~ */
 
-
+//badungu: Different offsets in creature files
 COPY_EXISTING ~MORTE.CRE~ ~override~
-  WRITE_ASCII 0x370 ~DMORTE~ #8
+	PATCH_IF !GAME_IS ~pstee~ BEGIN
+		WRITE_ASCII 0x370 ~DMORTE~ #8
+	END ELSE BEGIN
+		WRITE_ASCII 0x2cc ~DMORTE~ #8
+	END
  BUT_ONLY_IF_IT_CHANGES
 
 COPY_EXISTING ~0202INTR.BCS~ ~override~
@@ -111,12 +115,19 @@ COPY_EXISTING ~0202INTR.BCS~ ~override~
 // ============================= CHANGED AND WEIDUIZED BY QWINN =============================
 
 // SKARDAVNELNATE restored this interjection with two script changes, but I do it very differently.
-
+//badungu: Different spelling of GlobalSet in PST:EE
+ACTION_IF !GAME_IS ~pstee~ BEGIN
 COPY_EXISTING ~0202CS2.BCS~ ~override~
   DECOMPILE_BCS_TO_BAF
     REPLACE_TEXTUALLY ~GlobalSet("Mortuary_Walkthrough","GLOBAL",3)~ ~SetGlobal("Mortuary_Walkthrough","GLOBAL",2)~
   COMPILE_BAF_TO_BCS
  BUT_ONLY_IF_IT_CHANGES
+END ELSE BEGIN
+COPY_EXISTING ~0202CS2.BCS~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~SetGlobal("Mortuary_Walkthrough","GLOBAL",3)~ ~SetGlobal("Mortuary_Walkthrough","GLOBAL",2)~
+	END
+END
 
 COPY_EXISTING ~0202TRG2.BCS~ ~override~
   DECOMPILE_BCS_TO_BAF
