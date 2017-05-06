@@ -20,6 +20,7 @@
 // Ward or any of its buildings or subsections.
 
 COMPILE ~PST-UB/Able/dlg/Able.d~
+ACTION_IF !GAME_IS ~pstee~ BEGIN
 INCLUDE ~PST-UB/utils/Q_VARMacros.tph~
 
 COPY_EXISTING ~VAR.VAR~ ~VAR.TMP~
@@ -38,3 +39,4 @@ COPY_EXISTING ~VAR.VAR~ ~VAR.TMP~
  BUT_ONLY_IF_IT_CHANGES
 COPY ~VAR.TMP~ ~VAR.VAR~
 
+END

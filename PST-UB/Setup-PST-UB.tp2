@@ -159,7 +159,7 @@ INCLUDE ~PST-UB/CheatItems/tph/CheatItems.tph~
 
 BEGIN @2 // ~Restored Able Ponder-Thought Research~
 DESIGNATED 1
-REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
+REQUIRE_PREDICATE GAME_IS ~pst pstee~ ~This component is only available for Planescape Torment/Planescape Torment:Enhanced Edition~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!ABLE.xxx~
 INCLUDE ~PST-UB/Able/tph/Able.tph~
