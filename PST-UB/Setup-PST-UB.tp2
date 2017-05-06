@@ -19,7 +19,7 @@ ASK_EVERY_COMPONENT
 LANGUAGE
   ~English~  ~english~             ~PST-UB/tra/english/ub.tra~
                                    ~PST-UB/tra/english/ub.tra~
-LANGUAGE
+/*LANGUAGE
   ~German~   ~german~              ~PST-UB/tra/english/ub.tra~
                                    ~PST-UB/tra/german/ub.tra~
 LANGUAGE
@@ -36,9 +36,9 @@ LANGUAGE
                                    ~PST-UB/tra/russian/ub.tra~
 LANGUAGE
   ~French~  ~french~               ~PST-UB/tra/english/ub.tra~
-                                   ~PST-UB/tra/french/ub.tra~
+                                   ~PST-UB/tra/french/ub.tra~*/
 
-BEGIN @-2000  // Readme Viewer
+/*BEGIN @-2000  // Readme Viewer
 INSTALL_BY_DEFAULT
 NO_LOG_RECORD
 DESIGNATED 100
@@ -68,9 +68,9 @@ BEGIN
     BEGIN  AT_INTERACTIVE_NOW ~VIEW PST-UB/PSTUB_Dokumentacja.html~ END
   ACTION_IF ~%LANGUAGE%~ STRING_EQUAL ~french~  THEN
     BEGIN  AT_INTERACTIVE_NOW ~VIEW PST-UB/PSTUB_LisezMoi.html~ END
-END
+END*/
 
-BEGIN @1 // ~All Recommended PS:T Unfinished Business Components~
+/*BEGIN @1 // ~All Recommended PS:T Unfinished Business Components~
 DESIGNATED 0
   UNINSTALL "Setup-PST-UB.tp2" "1"
   UNINSTALL "Setup-PST-UB.tp2" "2"
@@ -119,7 +119,7 @@ DESIGNATED 0
   COPY_EXISTING ~SCALPEL.itm~ ~override/Q!LOWERW.xxx~
   INCLUDE ~PST-UB/LowerWard/tph/LowerWard.tph~
   COPY_EXISTING ~SCALPEL.itm~ ~override/Q!ALUFND.xxx~
-  INCLUDE ~PST-UB/Bestiary/tph/Bestiary.tph~
+  INCLUDE ~PST-UB/Bestiary/tph/Bestiary.tph~*/
 
 
 
