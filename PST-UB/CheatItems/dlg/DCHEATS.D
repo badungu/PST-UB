@@ -37,13 +37,13 @@ NOTE:  EXTRA TRIPLE DANGER-WILL-ROBINSON SUPER WARNING:  Teleporting somewhere y
 
 IF ~~ THEN BEGIN 3
   SAY @12 /* ~A beam of light issues from the Tome, erecting an impenetrable magical forcefield around your group which allows you to rest here, safe from all dangers.~ */
-  IF ~~ THEN REPLY @13 /* ~Break out the pillows.~ */ DO ~FadeToBlack()Wait(1)RestParty(-1,10,0)FadeFromBlack()~ EXIT
+  IF ~~ THEN REPLY @13 /* ~Break out the pillows.~ */ DO ~%FadeToBlack%Wait(1)%RestPartyEx%(-1,10,0)%FadeFromBlack%~ EXIT
   IF ~~ THEN REPLY @11 /* ~Never mind.  Let me review the chapters again.~ */ GOTO 1
  END
 
 IF ~~ THEN BEGIN 4
   SAY @14 /* ~Reading the incantation on this page will, apparently, cause one hundred thousand copper pieces to materialize in front of you. How you're going to carry it all is your problem, but you're sure you'll manage somehow.~ */
-  IF ~~ THEN REPLY @15 /* ~Intone:  'Show me the money!'~ */ DO ~CreatePartyGold(100000)~ GOTO 1
+  IF ~~ THEN REPLY @15 /* ~Intone:  'Show me the money!'~ */ DO ~%CreatePartyGold%(100000)~ GOTO 1
   IF ~~ THEN REPLY @11 /* ~Never mind.  Let me review the chapters again.~ */ GOTO 1
  END
 
@@ -71,10 +71,10 @@ IF ~~ THEN BEGIN 7
   IF ~~ THEN REPLY @20 /* ~10,000 experience just to myself.~ */ DO ~GiveExperience(Protagonist,10000)~ GOTO 1
   IF ~~ THEN REPLY @21 /* ~100,000 experience just to myself.~ */ DO ~GiveExperience(Protagonist,100000)~ GOTO 1
   IF ~~ THEN REPLY @22 /* ~1,000,000 experience just to myself.~ */ DO ~GiveExperience(Protagonist,1000000)~ GOTO 1
-  IF ~~ THEN REPLY @23 /* ~1,000 experience to the party.~ */ DO ~AddPartyExperience(1000)~ GOTO 1
-  IF ~~ THEN REPLY @24 /* ~10,000 experience to the party.~ */ DO ~AddPartyExperience(10000)~ GOTO 1
-  IF ~~ THEN REPLY @25 /* ~100,000 experience to the party.~ */ DO ~AddPartyExperience(100000)~ GOTO 1
-  IF ~~ THEN REPLY @26 /* ~1,000,000 experience to the party.~ */ DO ~AddPartyExperience(1000000)~ GOTO 1
+  IF ~~ THEN REPLY @23 /* ~1,000 experience to the party.~ */ DO ~%AddPartyExperience%(1000)~ GOTO 1
+  IF ~~ THEN REPLY @24 /* ~10,000 experience to the party.~ */ DO ~%AddPartyExperience%(10000)~ GOTO 1
+  IF ~~ THEN REPLY @25 /* ~100,000 experience to the party.~ */ DO ~%AddPartyExperience%(100000)~ GOTO 1
+  IF ~~ THEN REPLY @26 /* ~1,000,000 experience to the party.~ */ DO ~%AddPartyExperience%(1000000)~ GOTO 1
   IF ~~ THEN REPLY @11 /* ~Never mind.  Let me review the chapters again.~ */ GOTO 1
  END
 

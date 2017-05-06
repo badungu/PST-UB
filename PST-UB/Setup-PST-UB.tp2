@@ -22,10 +22,18 @@ ACTION_IF GAME_IS ~pstee~ BEGIN
 	OUTER_SPRINT "FadeToBlack" "FadeToColor([0.0],0)"
 	OUTER_SPRINT "CommaNull" ",0"
 	OUTER_SPRINT "NearSavedLocation" "NearSavedLocationPST"
+	OUTER_SPRINT "RestPartyEx" "RestPartyEx"
+	OUTER_SPRINT "FadeFromBlack" "FadeFromColor([0.0],0)"
+	OUTER_SPRINT "CreatePartyGold" "GivePartyGold"
+	OUTER_SPRINT "AddPartyExperience" "AddexperienceParty"
 END ELSE BEGIN
 	OUTER_SPRINT "FadeToBlack" "FadeToBlack()"
 	OUTER_SPRINT "CommaNull" ""
 	OUTER_SPRINT "NearSavedLocation" "NearSavedLocation"
+	OUTER_SPRINT "RestPartyEx" "RestParty"
+	OUTER_SPRINT "FadeFromBlack" "FadeFromBlack()"
+	OUTER_SPRINT "CreatePartyGold" "CreatePartyGold"
+	OUTER_SPRINT "AddPartyExperience" "AddPartyExperience"
 END
 
 END
@@ -145,7 +153,7 @@ INCLUDE ~PST-UB/XPDeionarra/tph/XPDeionarra.tph~
 
 BEGIN @15 // ~Restored Cheat Items (Not Recommended)~
 DESIGNATED 51
-REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
+REQUIRE_PREDICATE GAME_IS ~pst pstee~ ~This component is only available for Planescape Torment/Planescape Torment:Enhanced Edition~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!CITEMS.xxx~
 INCLUDE ~PST-UB/CheatItems/tph/CheatItems.tph~
 

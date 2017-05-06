@@ -29,7 +29,7 @@ CLEAR_IDS_MAP
 
 
 COMPILE ~PST-UB/CheatItems/dlg/CheatItems.d~
-COMPILE ~PST-UB/CheatItems/dlg/DCHEATS.d~ USING ~PST-UB/tra/%LANGUAGE%/dcheats.tra~
+COMPILE ~PST-UB/CheatItems/dlg/DCHEATS.d~ EVAL USING ~PST-UB/tra/%LANGUAGE%/dcheats.tra~
 
 // The original game files (strref 50577) said:
 // ~There are a number of chapters within the tome:  Teleport Cheat, Healing Cheat, Wealth Cheat, Spell Recharge
