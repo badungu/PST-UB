@@ -266,7 +266,7 @@ INCLUDE ~PST-UB/Sounds/tph/Sounds.tph~
 
 BEGIN @20 // ~Restored Mebbeth~
 DESIGNATED 14
-REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
+REQUIRE_PREDICATE GAME_IS ~pst pstee~ ~This component is only available for Planescape Torment/Planescape Torment:Enhanced Edition~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!MEBBTH.xxx~
 INCLUDE ~PST-UB/Mebbeth/tph/Mebbeth.tph~
