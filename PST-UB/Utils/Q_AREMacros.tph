@@ -5,10 +5,10 @@ DEFINE_PATCH_MACRO ~Q_ARE_InitVars~ BEGIN
 PATCH_IF (GAME_IS ~PST~) BEGIN //only pst games
 SET Q_Game = 1
 END
-PATCH_IF (GAME_IS ~soa tob bgt tutu tutu_totsc~) BEGIN //all bg2 engine games
+PATCH_IF (GAME_IS ~ pstee soa tob bgt tutu tutu_totsc~) BEGIN //all bg2 engine games
 SET Q_Game = 2
 END
-PATCH_IF !(GAME_IS ~PST soa tob bgt tutu tutu_totsc IWD2~) BEGIN //any other ie game but pst, bg2 variants and iwd2
+PATCH_IF !(GAME_IS ~pstee PST soa tob bgt tutu tutu_totsc IWD2~) BEGIN //any other ie game but pst, bg2 variants and iwd2
 SET Q_Game = 3
 END
 
