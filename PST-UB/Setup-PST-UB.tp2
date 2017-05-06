@@ -245,7 +245,7 @@ INCLUDE ~PST-UB/MorteTeeth/tph/MorteTeeth.tph~
 
 BEGIN @12 // ~Restored Alley of Dangerous Angles Thugs~
 DESIGNATED 11
-REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
+REQUIRE_PREDICATE GAME_IS ~pst pstee~ ~This component is only available for Planescape Torment/Planescape Torment:Enhanced Edition~
 FORBID_COMPONENT "Setup-PST-UB.tp2" "0" @16 // ~   Already Successfully Installed!~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!THUGS.xxx~
 INCLUDE ~PST-UB/AlleyThug/tph/AlleyThug.tph~
