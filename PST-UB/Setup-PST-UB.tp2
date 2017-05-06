@@ -16,6 +16,20 @@ NO_IF_EVAL_BUG
 
 ASK_EVERY_COMPONENT
 
+ALWAYS
+
+ACTION_IF GAME_IS ~pstee~ BEGIN
+	OUTER_SPRINT "FadeToBlack" "FadeToColor([0.0],0)"
+	OUTER_SPRINT "CommaNull" ",0"
+	OUTER_SPRINT "NearSavedLocation" "NearSavedLocationPST"
+END ELSE BEGIN
+	OUTER_SPRINT "FadeToBlack" "FadeToBlack()"
+	OUTER_SPRINT "CommaNull" ""
+	OUTER_SPRINT "NearSavedLocation" "NearSavedLocation"
+END
+
+END
+
 LANGUAGE
   ~English~  ~english~             ~PST-UB/tra/english/ub.tra~
                                    ~PST-UB/tra/english/ub.tra~
@@ -125,7 +139,7 @@ DESIGNATED 0
 
 BEGIN @21 // Expanded Deionarra's Truth Mod
 DESIGNATED 50
-REQUIRE_PREDICATE GAME_IS ~pst~ ~This component is currently only available for the original Planescape Torment~
+REQUIRE_PREDICATE GAME_IS ~pst pstee~ ~This component is only available for Planescape Torment/Planescape Torment:Enhanced Edition~
 COPY_EXISTING ~SCALPEL.itm~ ~override/Q!XPDEIO.xxx~
 INCLUDE ~PST-UB/XPDeionarra/tph/XPDeionarra.tph~
 

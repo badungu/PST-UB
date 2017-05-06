@@ -191,7 +191,7 @@ APPEND DKESAI
 
   IF WEIGHT #-97 ~Global("Kesai_Dream_Quest","GLOBAL",4)~ THEN BEGIN Kesai-Dream-6
     SAY @138
-    IF ~~ THEN REPLY @137 DO ~FadeToBlack()Wait(3)SetGlobal("Kesai_Dream_Quest","GLOBAL",5)DestroySelf()TeleportParty("AR0502",[502.1673],8)~ EXIT
+    IF ~~ THEN REPLY @137 DO ~%FadeToBlack%Wait(3)SetGlobal("Kesai_Dream_Quest","GLOBAL",5)DestroySelf()TeleportParty("AR0502",[502.1673],8)~ EXIT
     IF ~~ THEN REPLY @126 GOTO Ravel-Death-24
   END
 
@@ -205,8 +205,8 @@ APPEND DKESAI
 
   IF ~~ THEN BEGIN Kesai-Dream-4
     SAY @63
-    IF ~~ THEN REPLY @64 DO ~FadeToBlack()Wait(3)SetGlobal("Kesai_Dream_Quest","GLOBAL",5)DestroySelf()TeleportParty("AR0502",[502.1673],8)~ EXIT
-    IF ~~ THEN REPLY @65 DO ~FadeToBlack()Wait(3)SetGlobal("Kesai_Dream_Quest","GLOBAL",5)DestroySelf()TeleportParty("AR0502",[502.1673],8)~ EXIT
+    IF ~~ THEN REPLY @64 DO ~%FadeToBlack%Wait(3)SetGlobal("Kesai_Dream_Quest","GLOBAL",5)DestroySelf()TeleportParty("AR0502",[502.1673],8)~ EXIT
+    IF ~~ THEN REPLY @65 DO ~%FadeToBlack%Wait(3)SetGlobal("Kesai_Dream_Quest","GLOBAL",5)DestroySelf()TeleportParty("AR0502",[502.1673],8)~ EXIT
     IF ~~ THEN REPLY @66 GOTO Ravel-Death-24
     IF ~~ THEN REPLY @126 EXIT
   END
@@ -385,12 +385,12 @@ APPEND DDREAM
 
   IF ~~ THEN BEGIN Dream2-2
     SAY @74
-    IF ~~ THEN DO ~IncrementGlobal("Dream2_Sequence","GLOBAL",1)FadeToBlack()Wait(3)TeleportParty("AR3017A",[1591.2198],6)~ EXIT
+    IF ~~ THEN DO ~IncrementGlobal("Dream2_Sequence","GLOBAL",1)%FadeToBlack%Wait(3)TeleportParty("AR3017A",[1591.2198],6)~ EXIT
   END
 
   IF ~Global("Dream_Death_Count","GLOBAL",0)Global("Dream2_Sequence","GLOBAL",3)~ THEN BEGIN Dream2-3
     SAY @81
-    IF ~~ THEN DO ~IncrementGlobal("Dream2_Sequence","GLOBAL",1)FadeToBlack()Wait(3)TeleportParty("AR3017B",[2982.926],6)~ EXIT
+    IF ~~ THEN DO ~IncrementGlobal("Dream2_Sequence","GLOBAL",1)%FadeToBlack%Wait(3)TeleportParty("AR3017B",[2982.926],6)~ EXIT
   END
 
   IF ~Global("Dream_Death_Count","GLOBAL",0)Global("Dream2_Sequence","GLOBAL",5)~ THEN BEGIN Dream2-4
@@ -425,7 +425,7 @@ APPEND DDREAM
 
   IF ~~ THEN BEGIN Dream2-14
     SAY @92
-    IF ~~ THEN DO ~FadeToBlack()Wait(3)TeleportParty("AR3017C",[1121.745],14)~ EXIT
+    IF ~~ THEN DO ~%FadeToBlack%Wait(3)TeleportParty("AR3017C",[1121.745],14)~ EXIT
   END
 
   IF ~Global("Dream_Death_Count","GLOBAL",0)Global("Dream2_Sequence","GLOBAL",8)~ THEN BEGIN Dream2-15

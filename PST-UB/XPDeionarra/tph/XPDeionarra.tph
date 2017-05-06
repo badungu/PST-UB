@@ -1,9 +1,10 @@
 
-COMPILE ~PST-UB/XPDeionarra/dlg/XPDeionarra.d~ USING ~PST-UB/tra/%LANGUAGE%/XPDeionarra.tra~
+COMPILE ~PST-UB/XPDeionarra/dlg/XPDeionarra.d~ EVAL USING ~PST-UB/tra/%LANGUAGE%/XPDeionarra.tra~ //badungu: added EVAL for script evaluation
 
-INCLUDE ~PST-UB/utils/Q_VARMacros.tph~
 INCLUDE ~PST-UB/utils/Q_AREMacros.tph~
 
+ACTION_IF !GAME_IS ~pstee~ BEGIN	//badungu: VAR.VAR is not needed in PST:EE
+INCLUDE ~PST-UB/utils/Q_VARMacros.tph~
 COPY_EXISTING ~VAR.VAR~ ~VAR.TMP~
   SET Q_FileSize = %SOURCE_SIZE%
 
@@ -27,7 +28,9 @@ COPY_EXISTING ~VAR.VAR~ ~VAR.TMP~
 
  BUT_ONLY_IF_IT_CHANGES
 COPY ~VAR.TMP~ ~VAR.VAR~
+END
 
+ACTION_IF !GAME_IS ~pstee~ BEGIN //badungu: File structure is changed in PST:EE had to recreate the creatures/areas/etc...
 COPY ~PST-UB/XPDeionarra/copy/DRMMORTE.CRE~ ~override~
 COPY ~PST-UB/XPDeionarra/copy/DRMXACH.CRE~  ~override~
 COPY ~PST-UB/XPDeionarra/copy/DRMDAKKO.CRE~ ~override~
@@ -41,11 +44,36 @@ COPY ~PST-UB/XPDeionarra/copy/AR3017B.ARE~  ~override~
 COPY ~PST-UB/XPDeionarra/copy/AR3017C.ARE~  ~override~
 COPY ~PST-UB/XPDeionarra/copy/AR3017C.INI~  ~override~
 COPY ~PST-UB/XPDeionarra/copy/QUILLJNL.ITM~ ~override~
-
-COPY_EXISTING ~QUILLJNL.ITM~ ~override~
   SAY 0x50 @23
   SAY 0x54 @23
- BUT_ONLY_IF_IT_CHANGES
+ BUT_ONLY
+
+END ELSE BEGIN
+COPY ~PST-UB/XPDeionarra/eecopy~ ~override~
+
+//add Item dialogue
+APPEND ~ITEMDIAL.2da~ ~QUILLJNL  4251  DQUILLPN  -1~ UNLESS ~QUILLJNL~
+
+COPY_EXISTING ~Quill.itm~ ~override/QUILLJNL.itm~
+SAY NAME2 #1772					//set identified name
+SAY UNIDENTIFIED_DESC @23		//set Unidentified Description
+SAY DESC @23					//set Description
+WRITE_BYTE 0x1e (THIS & `BIT7)	//remove unusable by priest
+WRITE_BYTE 0x1f (THIS & `BIT3)	//remove unusable by fighter
+WRITE_BYTE 0x20 (THIS & `BIT1)	//remove unusable by fighter-thief
+WRITE_BYTE 0x20 (THIS | BIT4)	//add unusable by Dak'kon
+WRITE_BYTE 0x20 (THIS & `BIT6)	//remove unusable by thief
+WRITE_BYTE 0x21 (THIS | BIT0)	//add unusable by Ignus
+//remove Item ability
+LPF DELETE_ITEM_HEADER
+INT_VAR header_type = ~-1~
+END
+//badungu: remove Item Effects?
+/*LPF DELETE_ITEM_EQEFFECT
+INT_VAR opcode_to_delete = ~-1~
+END*/
+END
+
 
 
 COPY_EXISTING ~AR0602.ARE~ ~override~
@@ -163,7 +191,7 @@ IF
   Global("Kesai_Dream_Quest","GLOBAL",5)
 THEN
   RESPONSE #100
-    CreateCreature("Kesai",[544.1706])
+    CreateCreature("Kesai",[544.1706]%CommaNull%)
     ActionOverride("Kesai",ChangeAIScript("0502KESA",DEFAULT))
     SetGlobal("Kesai_Dream_Quest","GLOBAL",6)
     StartCutSceneMode()
@@ -179,7 +207,7 @@ THEN
     Continue()
 END
 >>>>>>>>
-EXTEND_BOTTOM ~AR0502.BCS~ ~.../inlinedfile/AR0502ADD.BAF~
+EXTEND_BOTTOM ~AR0502.BCS~ ~.../inlinedfile/AR0502ADD.BAF~ EVAL
 
 
 <<<<<<<< .../inlinedfile/AR3017A.BAF
@@ -347,7 +375,7 @@ THEN
 END
 
 IF
-  !NearSavedLocation(5)
+  !%NearSavedLocation%(5)
 THEN
   RESPONSE #100
     ReturnToSavedPlace()
@@ -360,7 +388,7 @@ THEN
     RandomWalk()
 END
 >>>>>>>>
-COMPILE ~.../inlinedfile/3017GLAZ.BAF~
+COMPILE ~.../inlinedfile/3017GLAZ.BAF~ EVAL
 
 
 <<<<<<<< .../inlinedfile/0502KESA.BAF
