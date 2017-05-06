@@ -60,6 +60,7 @@ COMPILE ~PST-UB/Parfidor/dlg/Parfidor.d~
 // SKARDAVNELNATE used in order to avoid needing a new VAR.VAR.  Per his request, adding
 // "Spawn_Carl" as a GLOBAL variable for this mod, and modifying the scripts to match.
 
+ACTION_IF !GAME_IS ~pstee~ BEGIN
 INCLUDE ~PST-UB/utils/Q_VARMacros.tph~
 COPY_EXISTING ~VAR.VAR~ ~VAR.TMP~
   SET Q_FileSize = %SOURCE_SIZE%
@@ -69,10 +70,81 @@ COPY_EXISTING ~VAR.VAR~ ~VAR.TMP~
   LAUNCH_PATCH_MACRO Q_VarVar_AddNewRecord
  BUT_ONLY_IF_IT_CHANGES
 COPY ~VAR.TMP~ ~VAR.VAR~
+END
 
 // Qwinn:  These 2 files don't exist in the vanilla game, safe to simply copy.
-COPY ~PST-UB/Parfidor/copy/0701OFF3.BCS~ ~override~
-     ~PST-UB/Parfidor/copy/CRSTADMN.CRE~ ~override~
+//COPY ~PST-UB/Parfidor/copy/0701OFF3.BCS~ ~override~
+ACTION_IF !GAME_IS ~pstee~ BEGIN
+COPY     ~PST-UB/Parfidor/copy/CRSTADMN.CRE~ ~override~
+END ELSE BEGIN
+COPY_EXISTING ~CWMALE.cre~ ~override/CRSTADMN.cre~
+	SAY NAME1 #22150
+	SAY NAME2 #22150
+	WRITE_LONG 0x28 0xF00B
+	WRITE_BYTE 0x8c "-1"
+	WRITE_BYTE 0x8d "-1"
+	READ_BYTE 0x97 "arguments"
+	WRITE_BYTE 0x97 ("%arguments%" BOR 0b00101100)
+	WRITE_ASCII 0x268 0701OFF3 #8
+	WRITE_ASCII 0x280 CRSTADMN #8
+	WRITE_ASCII 0x2cc DADMINAS #8
+END
+<<<<<<<< .../inlinedfile/0701OFF3.baf
+IF
+	Die()
+	Global("Carl_Snuffed","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Snuff_Carl","GLOBAL",4)
+		SetGlobal("Carl_Snuffed","GLOBAL",2)
+		SetGlobal("Spawn_Carl","GLOBAL",0)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(Myself),10)
+END
+
+IF
+	AttackedBy([PC],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Help()
+		RunAwayFrom([PC],10)
+END
+
+IF
+	Help([ANYONE])
+	!Help([PC])
+	%HelpBad%
+	%HelpDead%
+	%HelpHatmonium%
+	%HelpDamsel%
+THEN
+	RESPONSE #100
+		Enemy()
+		RunAwayFrom([PC],10)
+END
+
+IF
+	!%NearSavedLocation%(0)
+THEN
+	RESPONSE #100
+		ReturnToSavedPlace()
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		Face(2)
+END
+>>>>>>>>
+
+COMPILE ~.../inlinedfile/0701OFF3.baf~ EVAL
 
 <<<<<<<< .../inlinedfile/spawncarl.baf
 IF
@@ -80,11 +152,11 @@ IF
   GlobalLT("Spawn_Carl","GLOBAL",1)
 THEN
   RESPONSE #100
-    CreateCreature("CRSTADMN",[1845.615])
+    CreateCreature("CRSTADMN",[1845.615]%CommaNull%)
     SetGlobal("Spawn_Carl","GLOBAL",1)
 END
 >>>>>>>>
-EXTEND_TOP ~AR0701.BCS~ ~.../inlinedfile/spawncarl.baf~
+EXTEND_TOP ~AR0701.BCS~ ~.../inlinedfile/spawncarl.baf~ EVAL
 
 // ==============================================================================
 
